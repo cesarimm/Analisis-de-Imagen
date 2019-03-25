@@ -33,18 +33,7 @@ public class Expansion {
     }
     
     
-    
-//    public static int calcularMinimo(int histo[]){
-//    // recorremos el histograma de izq-der
-//        for(int x=0;x<histo.length;x++){
-//            if(histo[x]!=0){
-//            return x;
-//            }
-//        
-//        }
-//        return -1;
-//    }
-      
+  
       
     public static Image expansionLogaritmica(int j ,Image imagenOriginal){
         BufferedImage bi = ImageManager.toBufferedImage(imagenOriginal);
@@ -102,16 +91,6 @@ public class Expansion {
         return ImageManager.toImage(bi);
     }
     
-//    public static int calcularMaximo(int histo[]){
-//    // recorremos el histograma de der-izq
-//        for(int x=histo.length-1;x>-1;x--){
-//            if(histo[x]!=0){
-//            return x;
-//            }
-//        
-//        }
-//        return -1;
-//    }
     
     public static double validarRango(double valor){
         if(valor>255)return 255;
