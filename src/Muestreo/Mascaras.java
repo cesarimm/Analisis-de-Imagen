@@ -115,53 +115,7 @@ public class Mascaras {
                            
     }
     
-     public  Image aplicarKirsch(int divisor){
-      double[][] kernel = new double[3][3];
-       BufferedImage nueva = new BufferedImage(this.imagen.getWidth(null),this.imagen.getHeight(null),BufferedImage.TYPE_INT_RGB);
-       BufferedImage bi = ImageManager.toBufferedImage(imagen);      
-
-       for(int x=0; x<this.imagen.getWidth(null);x++){
-           for(int y=0; y<this.imagen.getHeight(null);y++){
-           double muestra[][] =extraerMuestra(x,y,bi);
-
-            if(muestra!=null){
-      
-            Color colorRes = colorKirsch(muestra,divisor);
-            
-            nueva.setRGB(x, y, colorRes.getRGB());
-            
-            }else{
-            nueva.setRGB(x, y, new Color(255,255,255).getRGB());
-            
-            }
-                 
-           }
-       }
-       
-       return ImageManager.toImage(nueva);
-    }
      
-     
-    
-    private Color colorKirsch(double[][] muestra, int divisor) {
-        int mR = 0, mG = 0, mB = 0;
-        int r,g,b;
-        //Retornar el mayor de las 8 mascaras
-        for(int i=0;i<8;i++){
-           Color color = Convolucion.convulacionar(this.arregloKirch[i], muestra, divisor);
-           r = color.getRed();
-           g = color.getGreen();
-           b = color.getBlue();
-           if(r>mR)mR=r;
-           if(g>mG)mG=g;
-           if(b>mB)mB=b;
-        
-        }
-        return new Color((int)Expansion.validarRango(mR),(int)Expansion.validarRango(mG), (int)Expansion.validarRango(mB));     
-    }
-    
-    
-    
       private double[][] extraerMuestra(int x, int y, BufferedImage bi) {
         double matriz[][] = new double[3][3];
        int xx=0;
