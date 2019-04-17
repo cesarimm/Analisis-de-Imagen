@@ -20,11 +20,15 @@ public class MainConvolucion {
         Image imagen = ImageManager.openImage();
         JFrameImagen frame1 = new JFrameImagen(imagen);
         double kernel [][] = new double[][]{{-2,-1,0},{-1,1,1},{0,1,2}};
-        double[][] prewittGx = {{0.0, -1.0, 0.0}, {0.0, 1.0, 0.0}, {0.0, 0.0, 0.0}};
-       // double kernel [][] = new double[][]{{0,1,0},{1,-4,1},{0,1,0}};
-       //double kernel2 [][] = new double[][]{{1,1,1,1,1},{1,4,4,4,1},{1,4,12,4,1},{1,4,4,4,1},{1,1,1,1,1}};
+//        double[][] prewittGx = {{0.0, -1.0, 0.0}, {0.0, 1.0, 0.0}, {0.0, 0.0, 0.0}};
+//         double[][] diferenciaPixelesGx = {{0.0, 0.0, 0.0}, {0.0, 1.0, -1.0}, {0.0, 0.0, 0.0}};
+//         double[][] diferenciaPixelesGy = {{0.0, -1.0, 0.0}, {0.0, 1.0, 0.0}, {0.0, 0.0, 0.0}};
+  //double kernel2 [][] = new double[][]{{0,1,0},{1,-4,1},{0,1,0}};
+       double kernel2 [][] = new double[][]{{1,1,1,1,1},{1,4,4,4,1},{1,4,12,4,1},{1,4,4,4,1},{1,1,1,1,1}};
         Convolucion convo = new Convolucion(imagen);
-        Image nueva = convo.aplicar(prewittGx, 1);  
-        JFrameImagen frame2 = new JFrameImagen(nueva);          
+        Image nueva = convo.aplicar(kernel, 1);  
+        JFrameImagen frame2 = new JFrameImagen(nueva);
+        nueva = convo.aplicar(kernel2, 1);  
+        JFrameImagen frame3 = new JFrameImagen(nueva);  
     }   
 }

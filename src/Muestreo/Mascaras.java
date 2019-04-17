@@ -16,13 +16,7 @@ import java.awt.image.BufferedImage;
  */
 public class Mascaras {
     //-3 -3  5 -3 0 5 -3 -3 5 http://www4.ujaen.es/~satorres/practicas/practica3_vc.pdf 
-    //-3 5 5 -3 0 5 -3 -3 -3
-    //5 5 5 -3 0 5 -3 -3 -3 
-    //5 5 -3 5 0 -3 -3 -3 -3 
-    //5 -3 -3 5 0 -3 5 -3 -3
-    //-3 -3 -3 5 0 -3 5 5 -3
-    //-3 -3 -3 5 0 -3 5 5 5 
-    //-3 .3 .3 -3 0 5 -3 5 5 
+  
     
        //Diferencias de pixeles
     private double[][] diferenciaPixelesGx = {{0.0, 0.0, 0.0}, {0.0, 1.0, -1.0}, {0.0, 0.0, 0.0}};
@@ -59,7 +53,7 @@ public class Mascaras {
     private double arregloKirch[][][] = new double[][][]{mascara1, mascara2, mascara3, mascara4, mascara5, mascara6, mascara7, mascara8};
     
     ///Arreglo de todas las mascaras
-       private double[][][][] mascaras= {arregloKirch,diferenciaPixeles,diferenciaPixelesSeparados,prewitt,Sobel,roberts,laplace1};
+    private double[][][][] mascaras= {arregloKirch,diferenciaPixeles,diferenciaPixelesSeparados,prewitt,Sobel,roberts,laplace1};
   
    
     private Image imagen;
@@ -100,7 +94,6 @@ public class Mascaras {
         int mR = 0, mG = 0, mB = 0;
         int r,g,b;
         
-       
                  for(int i=0;i<this.mascaras[casoMascara].length;i++){
                     Color color = Convolucion.convulacionar(this.mascaras[casoMascara][i], muestra, divisor);
                     r = color.getRed();

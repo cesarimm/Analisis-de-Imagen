@@ -20,6 +20,7 @@ public class JFrameDeslizable extends javax.swing.JFrame {
      */
      private Image image2;
      private int prueba;
+     
     
     public JFrameDeslizable(Image image1, Image image2) {
         initComponents();
