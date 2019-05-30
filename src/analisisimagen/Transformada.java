@@ -32,15 +32,15 @@ public class Transformada {
          JFrameImagen frame2 = new JFrameImagen(ImageManager.toImage(imgFre));
          
          ///Crear el filtro
-         FiltroIdealPasaBajas filtro = new FiltroIdealPasaBajas(512, 512, 35);
-         //FiltroIdealPasaAltas filtro = new FiltroIdealPasaAltas(512, 512, 35);
-         // FiltroButterworthPasaBajas filtro =new FiltroButterworthPasaBajas(512, 512, 40, .34);
+         //FiltroIdealPasaBajas filtro = new FiltroIdealPasaBajas(512, 512, 35);
+         FiltroIdealPasaAltas filtro = new FiltroIdealPasaAltas(512, 512, 40);
+        // FiltroButterworthPasaBajas filtro =new FiltroButterworthPasaBajas(512, 512, 45, 4.70);
+         //FiltroExponencialPasaBajas filtro =new FiltroExponencialPasaBajas(512, 512, 40, 3.55);
          filtro.generar();
          NumeroComplejo[][] matFiltro= filtro.getMatriz();
-         
+    
          gestor.aplicarFiltro(matFiltro);
          BufferedImage imagenEspacial = gestor.obtenerImagenEspacial();
          JFrameImagen frame3 = new JFrameImagen(ImageManager.toImage(imagenEspacial));
-
     }
 }

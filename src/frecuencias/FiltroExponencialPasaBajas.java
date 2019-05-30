@@ -38,12 +38,12 @@ public class FiltroExponencialPasaBajas extends FiltroFrecuencia{
                //double res = Math.exp(p/this.radio);
                int res2 = (int)Expansion.validarRango(res*255);
                
-               Color color = new Color(res2, res2, res2);
+               //Color color = new Color(res2, res2, res2);
                // asignamos en el color que le corresponde
                
                // pintamos en blanco
                
-               aux[x][y] = new NumeroComplejo(color.getRGB(),0);
+               aux[x][y] = new NumeroComplejo(res2,0);
            }
        }
     }

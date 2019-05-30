@@ -49,7 +49,6 @@ public class Gestor {
     //Agregando los otros metodos
     
      public void aplicarFiltro(NumeroComplejo[][] filtro) {
-
         // recorrer el filtro 
         for (int x = 0; x < this.imagenOriginal.getWidth(); x++) {
             for (int y = 0; y < this.imagenOriginal.getHeight();y++) {
@@ -60,7 +59,7 @@ public class Gestor {
                 int r = (int) (aux.getRed() * filtro[x][y].getReal());
                 int g = (int) (aux.getGreen()* filtro[x][y].getReal());
                 int b = (int) (aux.getBlue() * filtro[x][y].getReal());
-                aux = new Color(r, g, b);
+                aux = new Color((int)Expansion.validarRango(r), (int)Expansion.validarRango(g), (int)Expansion.validarRango(b));
                 setPixelDominioFrecuencias(x,y,true,aux.getRGB());}
             }
         }

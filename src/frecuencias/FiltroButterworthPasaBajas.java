@@ -41,7 +41,7 @@ public class FiltroButterworthPasaBajas extends FiltroFrecuencia{
                
                // pintamos en blanco
                
-               aux[x][y] = new NumeroComplejo(color.getRGB(),0);
+               aux[x][y] = new NumeroComplejo(res2,0);
            }
        }
     }
